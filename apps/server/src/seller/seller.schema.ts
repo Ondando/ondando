@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document } from 'mongoose';
+import { Payout } from 'src/payout/payout.schema';
 import { SellerProduct } from 'src/seller_product/seller_product.schema';
 import { User } from '../user/user.schema';
 
@@ -25,7 +26,7 @@ export class Seller {
   sellerProducts: SellerProduct[];
 
   @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Payout' }] })
-  payouts: string[];
+  payouts: Payout[];
 
   @Prop()
   bankAccount: string;
