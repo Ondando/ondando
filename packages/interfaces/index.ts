@@ -1,3 +1,3 @@
-import { IHello } from "./IHello";
+import { IUser } from "./IUser";
 
-export type { IHello };
+export type { IUser };
