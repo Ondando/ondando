@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document } from 'mongoose';
+import { SellerProduct } from 'src/seller_product/seller_product.schema';
 import { User } from '../user/user.schema';
 
 export type ReviewDocument = Review & Document;
@@ -14,7 +15,7 @@ export class Review {
     ref: 'SellerProduct',
     required: true,
   })
-  sellerProduct: string[];
+  sellerProduct: SellerProduct[];
 
   @Prop({ required: true })
   rating: number;

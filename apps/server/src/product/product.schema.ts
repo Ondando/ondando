@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document } from 'mongoose';
+import { Category } from 'src/category/category.schema';
 import { Wishlist } from '../wishlist/wishlist.schema';
 
 export type ProductDocument = Product & Document;
@@ -16,7 +17,7 @@ export class Product {
   tags: string[];
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Category' })
-  category: string;
+  category: Category;
 
   @Prop({ required: true })
   shortDescription: string;

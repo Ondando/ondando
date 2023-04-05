@@ -11,6 +11,7 @@ import { WishlistModule } from './wishlist/wishlist.module';
 import { SellerModule } from './seller/seller.module';
 import { SellerProductModule } from './seller_product/seller_product.module';
 import { ProductModule } from './product/product.module';
+import { CategoryModule } from './category/category.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { ProductModule } from './product/product.module';
     SellerModule,
     SellerProductModule,
     ProductModule,
+    CategoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

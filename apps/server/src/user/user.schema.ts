@@ -1,5 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document } from 'mongoose';
+import { Review } from 'src/review/review.schema';
+import { Seller } from 'src/seller/seller.schema';
+import { Wishlist } from 'src/wishlist/wishlist.schema';
 
 export type UserDocument = User & Document;
 
@@ -27,13 +30,13 @@ export class User {
   updatedAt: Date;
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Wishlist' })
-  wishlists: string[];
+  wishlists: Wishlist[];
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Review' })
-  reviews: string[];
+  reviews: Review[];
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Seller' })
-  seller: string;
+  seller: Seller;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

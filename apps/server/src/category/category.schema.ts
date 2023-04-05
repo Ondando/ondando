@@ -1,14 +1,16 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document } from 'mongoose';
 import { Product } from 'src/product/product.schema';
-import { User } from '../user/user.schema';
 
-export type WishlistDocument = Wishlist & Document;
+export type CategoryDocument = Category & Document;
 
 @Schema()
-export class Wishlist {
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true })
-  user: User;
+export class Category {
+  @Prop({ required: true })
+  name: string;
+
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Category' })
+  parent: Category;
 
   @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }] })
   products: Product[];
@@ -20,4 +22,4 @@ export class Wishlist {
   updatedAt: Date;
 }
 
-export const WishlistSchema = SchemaFactory.createForClass(Wishlist);
+export const CategorySchema = SchemaFactory.createForClass(Category);
