@@ -1,0 +1,15 @@
+# Use root/example as user/password credentials
+version: '3.7'
+services:
+  digitalDB:
+    image: mongo:4
+    container_name: digital
+    volumes:
+      - ./packages/database/data:/data/db
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=Admin
+      - MONGO_INITDB_ROOT_PASSWORD=Admin
+      - MONGO_INITDB_DATABASE=digital
+    
