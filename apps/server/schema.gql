@@ -10,6 +10,7 @@ type User {
   wishlists: [Wishlist]
   reviews: [Review]
   seller: Seller
+  orders: [Order!]
 }
 
 enum UserRole {

@@ -12,6 +12,9 @@ import { SellerModule } from './seller/seller.module';
 import { SellerProductModule } from './seller_product/seller_product.module';
 import { ProductModule } from './product/product.module';
 import { CategoryModule } from './category/category.module';
+import { TagModule } from './tag/tag.module';
+import { PayoutModule } from './payout/payout.module';
+import { OrderModule } from './order/order.module';
 
 @Module({
   imports: [
@@ -33,6 +36,9 @@ import { CategoryModule } from './category/category.module';
     SellerProductModule,
     ProductModule,
     CategoryModule,
+    TagModule,
+    PayoutModule,
+    OrderModule,
   ],
   controllers: [AppController],
   providers: [AppService],
