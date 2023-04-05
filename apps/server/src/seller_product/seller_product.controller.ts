@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { SellerProductService } from './seller_product.service';
 import { SellerProduct } from './seller_product.schema';
 
-@Controller('seller-products')
+@Controller('seller_product')
 export class SellerProductController {
   constructor(private readonly sellerProductService: SellerProductService) {}
 

@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { WishlistService } from './wishlist.service';
 import { Wishlist } from './wishlist.schema';
 
-@Controller('wishlists')
+@Controller('wishlist')
 export class WishlistController {
   constructor(private readonly wishlistService: WishlistService) {}
 

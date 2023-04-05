@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { CategoryService } from './category.service';
 import { Category } from './category.schema';
 
-@Controller('categories')
+@Controller('categorie')
 export class CategoryController {
   constructor(private readonly categoryService: CategoryService) {}
 
